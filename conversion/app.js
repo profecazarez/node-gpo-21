@@ -2,10 +2,12 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const monedas = require('./monedas') // para utilizar el modelo monedas de la bd
 const { Op } = require('sequelize') // para utilizar operadores de sequelize
+const cors = require('cors')
 
 const app = express()
 const puerto = 3000
 
+app.use(cors())
 app.use(bodyParser.json())
 
 app.listen(puerto, () => {
